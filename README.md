@@ -96,4 +96,4 @@ Should you have any question, please contact qiucheng@ucsb.edu
 
 ## Parent Repository
 
-This code is adopted from MPRNet<a href="">https://github.com/swz30/MPRNet</a>.
+This code is adopted from [MPRNet](https://github.com/swz30/MPRNet)</a>.
