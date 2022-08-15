@@ -3,9 +3,9 @@
 [Qiucheng Wu](https://wuqiuche.github.io/)<sup>1</sup>\*,
 [Yifan Jiang](https://yifanjiang.net/)<sup>2</sup>\*,
 [Junru Wu](http://sandbox3aster.github.io/)<sup>3</sup>\*,
-[Victor Kulikov]<sup>6</sup>,
-[Vidit Goel]<sup>6</sup>,
-[Nikita Orlov]<sup>6</sup>,
+Victor Kulikov<sup>6</sup>,
+Vidit Goel<sup>6</sup>,
+Nikita Orlov<sup>6</sup>,
 [Humphrey Shi](https://www.humphreyshi.com/)<sup>4,5,6</sup>,
 [Zhangyang Wang](https://vita-group.github.io/)<sup>2</sup>,
 [Shiyu Chang](https://code-terminator.github.io/)<sup>1</sup>
@@ -45,17 +45,17 @@ First, please download the [GoPro](https://seungjunnah.github.io/Datasets/gopro)
 Your `Datasets` directory tree should look like this
 
 `Datasets` <br/>
-  `└──`train
-    `└──`input
-    `└──`target
-  `└──`test
-    `└──`input
-    `└──`target
-  `├──`GoPro_Large_all
-  `├──`RealBlur-J_ECC_IMCORR_centroid_itensity_ref
-  `├──`RealBlur_J_test_list.txt
-  `├──`RealBlur_R_test_list.txt
-  `└──`RealBlur-R_BM3D_ECC_IMCORR_centroid_itensity_ref
+  `└──`train <br/>
+    `└──`input <br/>
+    `└──`target <br/>
+  `└──`test <br/>
+    `└──`input <br/>
+    `└──`target <br/>
+  `├──`GoPro_Large_all <br/>
+  `├──`RealBlur-J_ECC_IMCORR_centroid_itensity_ref <br/>
+  `├──`RealBlur_J_test_list.txt <br/>
+  `├──`RealBlur_R_test_list.txt <br/>
+  `└──`RealBlur-R_BM3D_ECC_IMCORR_centroid_itensity_ref <br/>
 
 Then, prepare our dataset with diverse blur levels: 
 ```bash
@@ -65,7 +65,7 @@ python genNewGoPro.py
 This step creates the blurs with different blur levels for training and evaluation.
 
 ## Running Inference
-First, please download the pre-trained model weights here:<a href="">https://drive.google.com/file/d/16GGqXywetsjDYsjCkNV3AaP4okQJmmGm/view?usp=sharing</a>. Please put it in the ```deblurring_release/pretrained_models``` folder.
+First, please download the pre-trained model weights [here](https://drive.google.com/file/d/16GGqXywetsjDYsjCkNV3AaP4okQJmmGm/view?usp=sharing). Please put it in the ```deblurring_release/pretrained_models``` folder.
 
 To reproduce our results on GoPro dataset:
 ```bash
