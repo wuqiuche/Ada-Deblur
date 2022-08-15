@@ -52,10 +52,10 @@ Your `Datasets` directory tree should look like this
     `└──`input <br/>
     `└──`target <br/>
   `├──`GoPro_Large_all <br/>
-    `├──`RealBlur-J_ECC_IMCORR_centroid_itensity_ref <br/>
-    `├──`RealBlur_J_test_list.txt <br/>
-    `├──`RealBlur_R_test_list.txt <br/>
-    `└──`RealBlur-R_BM3D_ECC_IMCORR_centroid_itensity_ref <br/>
+  `├──`RealBlur-J_ECC_IMCORR_centroid_itensity_ref <br/>
+  `├──`RealBlur_J_test_list.txt <br/>
+  `├──`RealBlur_R_test_list.txt <br/>
+  `└──`RealBlur-R_BM3D_ECC_IMCORR_centroid_itensity_ref
 
 Then, prepare our dataset with diverse blur levels: 
 ```bash
