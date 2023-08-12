@@ -62,7 +62,7 @@ Then, prepare our dataset with diverse blur levels:
 python genNewGoPro.py
 ```
 
-This step creates the blurs with different blur levels for training and evaluation.
+This step creates the blurs with different blur levels for training and evaluation. We also provide the data with different blur levels (based on GoPro dataset) [here](https://drive.google.com/file/d/1pJF4bn4Ft64cMMbtzfJFcHKqBYaKfQwb/view?usp=sharing).
 
 ## Running Inference
 First, please download the pre-trained model weights [here](https://drive.google.com/file/d/16GGqXywetsjDYsjCkNV3AaP4okQJmmGm/view?usp=sharing). Please put it in the ```deblurring_release/pretrained_models``` folder.

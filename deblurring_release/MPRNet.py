@@ -34,6 +34,10 @@ class CALayer(nn.Module):
     def forward(self, x):
         y = self.avg_pool(x)
         y = self.conv_du(y)
+        h, w = x.shape[2:]
+        _h, _w = y.shape[2:]
+        pad2d = ((w - _w)//2, (w - _w + 1)//2, (h - _h) // 2, (h - _h + 1) // 2)
+        y = torch.nn.functional.pad(y, pad2d, mode='replicate')
         return x * y
 
 
@@ -321,21 +325,20 @@ class MPRNet(nn.Module):
         x1rbot = self.shallow_feat1(x1rbot_img)
         
         ## Process features of all 4 patches with Encoder of Stage 1
-        if window_size == -1:
+        if window_size == -1: # infer
             testWindowSize = torch.tensor([7]).to("cuda")
-            prevDiff = 100
+            prevDiff = 1.65e5
             while True:
-                feat1_ltop = self.stage1_encoder(x1ltop, testWindowSize)
-                feat1_ltop2 = self.stage1_encoder(x1ltop, testWindowSize+2)
-                currDiff = torch.norm(feat1_ltop[0] - feat1_ltop2[0])
+                feat1_lbot = self.stage1_encoder(x1lbot, testWindowSize)
+                feat1_lbot2 = self.stage1_encoder(x1lbot, testWindowSize+2)
+                currDiff = torch.norm(feat1_lbot[0] - feat1_lbot2[0], p=1)
                 if currDiff > prevDiff:
                     break
                 prevDiff = currDiff
                 testWindowSize += 2
-                if testWindowSize > 15:
+                if testWindowSize >= 15:
                     break
             window_size = testWindowSize
-        # import ipdb; ipdb.set_trace()
 
         feat1_ltop = self.stage1_encoder(x1ltop, window_size)
         feat1_rtop = self.stage1_encoder(x1rtop, window_size)
